@@ -26,7 +26,7 @@
 <!--  FORM WITH FORM_WITH -->
 <%= form_with model: @user do |form|%>
   <%= form.label :email, "Please enter your email:"%>
-  <%= form.email_field :email %><br><br>
+  <%= form.email_field :email, placeholder: "example@example.com" %><br><br>
   <%= form.label :username, "Please enter your username:" %>
   <%= form.text_field :username %><br><br>
   <%= form.label :password, "Please enter your password:" %>
