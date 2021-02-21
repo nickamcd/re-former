@@ -1,0 +1,35 @@
+<!-- PLAIN HTML
+<form method="patch" action="/users/:id/edit" accept-charset="UTF-8">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="email">Please enter your email:</label>
+  <input type="text" id="email" name="user[email]"><br><br>
+  <label for="username">Please enter your username:</label>
+  <input type="text" id="username" name=user[username]><br><br>
+  <label for="password">Please enter your password:</label>
+  <input type="password" id="password" name="user[password]"><br><br>
+  <input type="submit" value="Submit">
+</form>
+-->
+
+<!-- FORM WITH FORM_TAG 
+<%= form_tag '/users' do %>
+  <%= label_tag 'Please enter your email:' %>
+  <%= email_field_tag :email %><br><br>
+  <%= label_tag 'Please enter your username:' %>
+  <%= text_field_tag :username %><br><br>
+  <%= label_tag 'Please enter your password:' %>
+  <%= password_field_tag :password%><br><br>
+  <%= submit_tag 'Submit' %>
+<% end %>
+-->
+
+<!--  FORM WITH FORM_WITH -->
+<%= form_with model: @user do |form|%>
+  <%= form.label :email, "Please enter your email:"%>
+  <%= form.email_field :email, placeholder: "example@example.com" %><br><br>
+  <%= form.label :username, "Please enter your username:" %>
+  <%= form.text_field :username %><br><br>
+  <%= form.label :password, "Please enter your password:" %>
+  <%= form.password_field :password %><br><br>
+  <%= form.submit %>
+<% end %>
